@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
       delay(5000),
       switchMap(data => {
         if (data === "auth") {
-          return throwError("saml").pipe(
+          return of("saml").pipe(
             map(saml => {
               if (saml === "saml") {
                 return true;
